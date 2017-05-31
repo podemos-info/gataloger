@@ -18,6 +18,12 @@ Install and run.
   
 The ```--prepare``` downloads external files and generates additional input files, it must be used in the first run. Downloaded files are cached, use ```--no-cache``` to force the program to download them again.
 
+After its execution, output files will be in the ```output``` folder:
+* `territories.tsv` will contain a territory per line, with a unique identifier (UID), a name and a territory name.
+* `territories.translations.tsv` will contain a translation per line, with a UID, locale and translation. Languages used can be set on command execution.
+* `territories.mappings.tsv` will contain different a standard association per line, with a UID, a standard code and it associated value.
+* `territories.metadata.tsv` will contain extra information per line, with a UID, and a key-value pair.
+
 # Information sources evaluated / used
 
 unlocode all iso 3166-2
