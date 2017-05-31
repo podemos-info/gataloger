@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby
+require 'optparse'
+require 'methadone'
+require 'gataloger'
+
+class App
+  include Methadone::Main
+  include Methadone::CLILogging
+
+  main do
+
+    # configurations
+    # IMPORTANT: remove all non-plugin settings from options before loading plugins
+    options.keep_if {|o| o.is_a? Symbol }  # only use symbol options
+    options[:plugins] = {}
+    if options[:locales]
+      options[:locales] = options[:locales].split(",")
+    end
+    Gataloger::Plugins.available.each do |order, plugin|
+      pl = plugin.to_sym
+      if options[pl]
+        options[:plugins][pl] = options.delete(plugin.to_sym)
+      end
+    end
+
+    Gataloger::Main.new(options).run
+  end
+
+  description "Gatherer of generic geographical information"
+  on("--prepare", "Prepare data to be processed")
+  on("--main-locale", "Override main locale (#{Gataloger::Main::DEFAULT_MAIN_LOCALE})")
+  on("--locales", "Override default locales (#{Gataloger::Main::DEFAULT_LOCALES.join(", ")})")
+  on("--[no-]cache", "Cache allows to avoid download already downloaded files")
+
+  Gataloger::Plugins.available.each do |order, plugin|
+    on("--[no-]#{plugin}", "#{plugin} plugin")
+  end
+
+  version Gataloger::VERSION
+
+  use_log_level_option :toggle_debug_on_signal => 'USR1'
+
+  go!
+end
