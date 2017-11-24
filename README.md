@@ -14,7 +14,7 @@ It current setup is created specifically to have Spanish extra details, but it c
 Install and run.
 
     bundle install
-    bundle exec bin/cataloger --prepare
+    bundle exec bin/gataloger --prepare
   
 The ```--prepare``` downloads external files and generates additional input files, it must be used in the first run. Downloaded files are cached, use ```--no-cache``` to force the program to download them again.
 
