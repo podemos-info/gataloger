@@ -1,0 +1,14 @@
+eu:
+  world:
+    es:
+      name: Espainia
+      nc:
+        name: Nafarroako Foru Komunitatea
+        na:
+          name: Nafarroa
+      pv:
+        name: Euskal Herria
+        ss:
+          name: Gipuzkoa
+        bi:
+          name: Bizkaia

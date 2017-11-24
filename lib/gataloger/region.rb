@@ -6,7 +6,7 @@ module Gataloger
     end
 
     def << region
-      raise "Duplicated Unique ID" if @regions.member? region.uid
+      raise "Duplicated Unique ID: #{region.uid} (#{region.type})" if @regions.member? region.uid
       @regions[region.uid] = region
     end
 

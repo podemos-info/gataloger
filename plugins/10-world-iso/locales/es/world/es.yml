@@ -1,0 +1,36 @@
+---
+es:
+  world:
+    es:
+      an:
+        name: Andalucía
+      ar:
+        name: Aragón
+      as:
+        name: Asturias
+      cl:
+        name: Castilla y León
+      cn:
+        name: Canarias
+      ct:
+        name: Cataluña
+      ib:
+        name: Islas Baleares
+      mc:
+        name: Región de Murcia 
+      md:
+        name: Comunidad de Madrid
+      nc:
+        name: Comunidad Foral de Navarra
+        na:
+          name: Navarra
+      pv:
+        name: País Vasco
+        ss:
+          name: Guipúzcoa
+        bi:
+          name: Vizcaya
+      vc:
+        name: Comunidad Valenciana
+        v:
+          name: Valencia

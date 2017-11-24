@@ -1,0 +1,14 @@
+---
+ca:
+  world:
+    es:
+      name: Espanya
+      ct:
+        name: Catalunya
+      ib:
+        name: Illes Balears
+      vc:
+        name: Comunitat Valenciana
+        v:
+          name: València
+

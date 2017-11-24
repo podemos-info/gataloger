@@ -8,7 +8,6 @@ class App
   include Methadone::CLILogging
 
   main do
-
     # configurations
     # IMPORTANT: remove all non-plugin settings from options before loading plugins
     options.keep_if {|o| o.is_a? Symbol }  # only use symbol options
@@ -28,8 +27,7 @@ class App
 
   description "Gatherer of generic geographical information"
   on("--prepare", "Prepare data to be processed")
-  on("--main-locale", "Override main locale (#{Gataloger::Main::DEFAULT_MAIN_LOCALE})")
-  on("--locales", "Override default locales (#{Gataloger::Main::DEFAULT_LOCALES.join(", ")})")
+  on("--locales", "Override locales (#{Gataloger::Main::DEFAULT_LOCALES}). Use - to set fallback locales per locale, for example ca-es. English is the last fallback locale.")
   on("--[no-]cache", "Cache allows to avoid download already downloaded files")
 
   Gataloger::Plugins.available.each do |order, plugin|

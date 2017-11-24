@@ -1,0 +1,30 @@
+---
+en:
+  world:
+    es:
+      an:
+        name: Andalusia
+      ar:
+        name: Aragon
+      as:
+        name: Asturias
+      cl:
+        name: Castile and León
+      cn:
+        name: Canary Islands
+      ct:
+        name: Catalonia
+      ib:
+        name: Balearic Islands
+      mc:
+        name: Region of Murcia 
+      md:
+        name: Community of Madrid
+      nc:
+        name: Navarre
+      pv:
+        name: Basque Country
+      vc:
+        name: Valencian Community
+      v:
+        name: Valencia

@@ -1,13 +1,12 @@
 require 'carmen'
+require File.dirname(__FILE__) + '/tree_carmen_i18n_backend'
+
 module Gataloger::Plugins
   class WorldISO < Plugin
     def process regions
       # configure locales
-      main_locale = @config[:main_locale]
-      Carmen.i18n_backend.default_locale = main_locale
-      Carmen.reset_i18n_backend
-      Carmen.i18n_backend.append_locale_path File.expand_path("locale/", File.dirname(__FILE__))
-      @locales = @config[:locales] & Carmen.i18n_backend.available_locales
+      Carmen.i18n_backend.append_locale_path File.expand_path("locales/", File.dirname(__FILE__))
+      Carmen.i18n_backend = TreeCarmenI18nBackend.new(@config[:locales], Carmen.i18n_backend.locale_paths.map(&:to_s))
       
       # browse countries
       Carmen::Country.all.each do |territory|
@@ -20,11 +19,7 @@ module Gataloger::Plugins
 private
     def add_region regions, territory, region, root, mappings
       # add translations on every locales
-      @locales.each do |locale|
-        Carmen.i18n_backend.locale = locale.to_sym
-        region.translations[locale] = territory.name
-      end
-      Carmen.i18n_backend.locale = Carmen.i18n_backend.default_locale
+      region.translations.merge!(territory.translations)
 
       # add region to results
       regions << region
@@ -39,22 +34,6 @@ private
         subregion = Gataloger::Region.new code: subterritory.code, parent: region, type: subterritory.type, name: subterritory.name
         add_region regions, subterritory, subregion, root, { "ISO-3166-2" => "#{root.code}-#{subterritory.code}" }
       end
-    end
-  end
-end
-
-# allows to override default locale
-module Carmen::I18n
-  class Simple
-    def default_locale
-      @default_locale
-    end
-    def default_locale= value
-      @default_locale = value
-    end
-
-    def DEFAULT_LOCALE
-      @default_locale
     end
   end
 end

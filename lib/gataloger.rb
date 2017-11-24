@@ -8,12 +8,10 @@ module Gataloger
   class Main
     include Methadone::CLILogging
 
-    DEFAULT_MAIN_LOCALE = "es"
-    DEFAULT_LOCALES = [ "es", "ca", "eu", "ga", "en" ]
+    DEFAULT_LOCALES = 'es ca-es eu-es ga-es en'
 
     def initialize config
       @config = {
-        main_locale: DEFAULT_MAIN_LOCALE,
         locales: DEFAULT_LOCALES,
         cache: true,
         paths: {
@@ -23,6 +21,19 @@ module Gataloger
         plugins: {},
         prepare: false
       }.merge(config)
+
+      locales = {}
+      @config[:locales].split(" ").each do |locale|
+        path = locales
+        locale.split("-").reverse.each do |part|
+          if path[part]
+            path = path[part]
+          else
+            path = path[part] = {}
+          end
+        end
+      end
+      @config[:locales] = locales
       change_logger(Methadone::CLILogger.new)
     end
 
@@ -42,8 +53,8 @@ module Gataloger
       end
     end
 
+    private
 
-private
     def prepare
       info("Preparing plugins:")
       Plugins::Plugin.plugins.each do |plugin|
@@ -67,19 +78,19 @@ private
     def dump regions
       output = @config[:paths][:output]
 
-      CSV.open(output_path("territories"), "wb", col_sep: "\t", headers: [ "UID", "Type", "Name"], write_headers: true) do |csv|
+      CSV.open(output_path("scopes"), "wb", col_sep: "\t", headers: [ "UID", "Type", "Name"], write_headers: true) do |csv|
         regions.each do |region|
           csv << [ region.uid, region.type, region.name ]
         end
       end
 
-      CSV.open(output_path("territories.mappings"), "wb", col_sep: "\t", headers: [ "UID", "Encoding", "Code"], write_headers: true) do |csv|
+      CSV.open(output_path("scopes.mappings"), "wb", col_sep: "\t", headers: [ "UID", "Encoding", "Code"], write_headers: true) do |csv|
         regions.each_mapping do |uid, encoding, code|
           csv << [uid, encoding, code ]
         end
       end
 
-      CSV.open(output_path("territories.metadata"), "wb", col_sep: "\t", headers: [ "UID", "Key", "Value"], write_headers: true) do |csv|
+      CSV.open(output_path("scopes.metadata"), "wb", col_sep: "\t", headers: [ "UID", "Key", "Value"], write_headers: true) do |csv|
         regions.each do |region|
           region.metadata.each do |key, value|
             csv << [region.uid, key, value ]
@@ -87,7 +98,7 @@ private
         end
       end
 
-      CSV.open(output_path("territories.translations"), "wb", col_sep: "\t", headers: [ "UID", "Locale", "Translation"], write_headers: true) do |csv|
+      CSV.open(output_path("scopes.translations"), "wb", col_sep: "\t", headers: [ "UID", "Locale", "Translation"], write_headers: true) do |csv|
         regions.each do |region|
           region.translations.each do |locale, translation|
             csv << [region.uid, locale, translation ]
