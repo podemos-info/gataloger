@@ -97,23 +97,36 @@ module Gataloger::Plugins
       end
 
       CSV.foreach(input_path("islas.csv"), headers: true) do |row|
-        island = Gataloger::ExtraRegion.new extra_type: "I", code: row["ID"], parent: regions[row["UID-PADRE"]], type: "island", name: row["NOMBRE"], mappings: { "INE-ISLA" => row["INE-ISLA"] }
+        island = Gataloger::Region.new code: row["ID"], parent: regions[row["UID-PADRE"]], type: "island", name: row["NOMBRE"]
+        island.translations["es"] = row["NOMBRE"]
         regions << island
+        regions.add_mapping island.uid, "INE-ISLA", row["INE-ISLA"]
       end
 
       municipalities_path = input_path("municipios.csv")
       if File.exists? municipalities_path
 
+        islands = {}
+        CSV.foreach(input_path("municipios.islas.csv"), headers: true) do |row|
+          regions.add_mapping row["UID"], "INE-PROV", row["INE-PROV"]
+          islands[row["INE-PROV"]+row["INE-MUNI"]] = row["INE-ISLA"]
+        end
+
         CSV.foreach(municipalities_path, headers: true) do |row|
           name = row["NOMBRE"].split(", ").reverse.join(" ")
-          province = regions.mapping("INE-PROV", row["INE-PROV"])
+          code = row["INE-PROV"]+row["INE-MUNI"]
 
-          municipality = Gataloger::Region.new code: row["INE-MUNI"], parent: province, type: "municipality", name: name
+          parent = if islands[code]
+                     regions.mapping("INE-ISLA", islands[code])
+                   else
+                     regions.mapping("INE-PROV", row["INE-PROV"])
+                   end
+          municipality = Gataloger::Region.new code: row["INE-MUNI"], parent: parent, type: "municipality", name: name
           municipality.translations["es"] = name
           regions << municipality
 
-          regions.add_mapping municipality.uid, "INE-MUNI", row["INE-PROV"]+row["INE-MUNI"]
-          regions.add_mapping municipality.uid, "INE-MUNI-DC", row["INE-PROV"]+row["INE-MUNI"]+row["INE-MUNI-DC"]
+          regions.add_mapping municipality.uid, "INE-MUNI", code
+          regions.add_mapping municipality.uid, "INE-MUNI-DC", code+row["INE-MUNI-DC"]
         end
 
         municipalities_census_path = input_path("municipios.poblacion.csv")
