@@ -1,8 +1,9 @@
 require 'methadone'
-require "gataloger/version"
-require "gataloger/region"
-require "gataloger/plugins"
-require "csv"
+require 'gataloger/version'
+require 'gataloger/region'
+require 'gataloger/plugins'
+require 'csv'
+require 'fileutils'
 
 module Gataloger
   class Main
