@@ -46,7 +46,7 @@ module Gataloger::Plugins
         download = nil
         url = "http://www.ine.es/pob_xls/pobmun.zip"
         download = open(url) rescue nil
-        
+
         if download.nil?
           warn "! Can't download municipalities population from INE."
         else
@@ -72,7 +72,7 @@ module Gataloger::Plugins
               temp_file = File.join temp_folder, file.name
               file.extract(temp_file)
               excel = Roo::Spreadsheet.open(temp_file)
-              excel.sheet(0).parse(prov: /CPRO|Código provincia/, mun: /CMUN|Código Municipio/, 
+              excel.sheet(0).parse(prov: /CPRO|Código provincia/, mun: /CMUN|Código Municipio/,
                                  hombres: /Hombres|Varones/i, mujeres: /Mujeres/i).each do |row|
                 prov, mun, hombres, mujeres = row.values_at(:prov, :mun, :hombres, :mujeres)
                 next if mun.nil?
@@ -137,7 +137,7 @@ module Gataloger::Plugins
             municipality.metadata["pob-#{year}-male"] = row["HOMBRES"]
           end
         end
-        
+
       else
         warn "! INE municipalities list not available. Run spain-ine plugin with --prepare flag to download it."
       end
