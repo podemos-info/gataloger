@@ -108,7 +108,6 @@ module Gataloger::Plugins
 
         islands = {}
         CSV.foreach(input_path("municipios.islas.csv"), headers: true) do |row|
-          regions.add_mapping row["UID"], "INE-PROV", row["INE-PROV"]
           islands[row["INE-PROV"]+row["INE-MUNI"]] = row["INE-ISLA"]
         end
 
