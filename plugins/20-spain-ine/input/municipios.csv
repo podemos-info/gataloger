@@ -18,6 +18,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 01,021,0,Elburgo/Burgelu
 01,022,5,Elciego
 01,023,1,Elvillar/Bilar
+01,047,4,Erriberabeitia
 01,046,8,Erriberagoitia/Ribera Alta
 01,056,5,Harana/Valle de Arana
 01,901,5,Iruña Oka/Iruña de Oca
@@ -38,7 +39,6 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 01,042,1,Okondo
 01,043,7,Oyón-Oion
 01,044,2,Peñacerrada-Urizaharra
-01,047,4,Ribera Baja/Erribera Beitia
 01,052,8,Samaniego
 01,053,4,San Millán/Donemiliaga
 01,054,9,Urkabustaiz
@@ -281,7 +281,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 04,001,0,Abla
 04,002,5,Abrucena
 04,003,1,Adra
-04,004,6,Albánchez
+04,004,6,Albanchez
 04,005,9,Alboloduy
 04,006,2,Albox
 04,007,8,Alcolea
@@ -836,7 +836,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 07,902,8,"Migjorn Gran, Es"
 07,038,0,Montuïri
 07,039,3,Muro
-07,040,7,Palma de Mallorca
+07,040,7,Palma
 07,041,4,Petra
 07,044,0,"Pobla, Sa"
 07,042,9,Pollença
@@ -1789,7 +1789,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 11,020,1,Jerez de la Frontera
 11,021,8,Jimena de la Frontera
 11,022,3,"Línea de la Concepción, La"
-11,023,9,Medina-Sidonia
+11,023,9,Medina Sidonia
 11,024,4,Olvera
 11,025,7,Paterna de Rivera
 11,026,0,Prado del Rey
@@ -1799,6 +1799,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 11,030,9,Rota
 11,031,6,San Fernando
 11,902,8,San José del Valle
+11,903,4,San Martín del Tesorillo
 11,033,7,San Roque
 11,032,1,Sanlúcar de Barrameda
 11,034,2,Setenil de las Bodegas
@@ -1817,7 +1818,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 12,006,9,Alcudia de Veo
 12,007,5,Alfondeguilla
 12,008,1,Algimia de Almonacid
-12,009,4,Almazora/Almassora
+12,009,4,Almassora
 12,010,8,Almedíjar
 12,011,5,Almenara
 12,901,8,"Alqueries, les/Alquerías del Niño Perdido"
@@ -1836,7 +1837,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 12,026,5,Benassal
 12,027,1,Benicarló
 12,028,7,Benicasim/Benicàssim
-12,029,0,Benlloch
+12,029,0,Benlloc
 12,021,3,Betxí
 12,032,6,Borriana/Burriana
 12,031,1,Borriol
@@ -1930,11 +1931,11 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 12,123,3,Vallat
 12,127,0,Vallibona
 12,128,6,Vilafamés
+12,129,9,Vilafranca/Villafranca del Cid
 12,132,5,Vilanova d'Alcolea
 12,134,6,Vilar de Canes
 12,135,9,Vila-real
 12,136,2,"Vilavella, la"
-12,129,9,Villafranca del Cid/Vilafranca
 12,130,3,Villahermosa del Río
 12,131,0,Villamalur
 12,133,1,Villanueva de Viver
@@ -2074,12 +2075,14 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 14,025,3,Espejo
 14,026,6,Espiel
 14,027,2,Fernán-Núñez
+14,901,9,Fuente Carreteros
 14,028,8,Fuente la Lancha
 14,029,1,Fuente Obejuna
 14,030,5,Fuente Palmera
 14,031,2,Fuente-Tójar
 14,032,7,"Granjuela, La"
 14,033,3,Guadalcázar
+14,902,4,"Guijarrosa, La"
 14,034,8,"Guijo, El"
 14,035,1,Hinojosa del Duque
 14,036,4,Hornachuelos
@@ -2479,12 +2482,12 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 17,025,5,Bordils
 17,026,8,Borrassà
 17,027,4,Breda
-17,028,0,Brunyola
+17,028,0,Brunyola i Sant Martí Sapresa
 17,031,4,Cabanelles
 17,030,7,Cabanes
 17,032,9,Cadaqués
 17,033,5,Caldes de Malavella
-17,034,0,Calonge
+17,034,0,Calonge i Sant Antoni
 17,035,3,Camós
 17,036,6,Campdevànol
 17,037,2,Campelles
@@ -2742,6 +2745,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 18,072,6,Escúzar
 18,074,7,Ferreira
 18,076,3,Fonelas
+18,077,9,Fornes
 18,078,5,Freila
 18,079,8,Fuente Vaqueros
 18,905,6,"Gabias, Las"
@@ -2768,7 +2772,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 18,105,4,Iznalloz
 18,106,7,Játar
 18,107,3,Jayena
-18,108,9,Jerez del Marquesado
+18,108,9,Jérez del Marquesado
 18,109,2,Jete
 18,111,3,Jun
 18,112,8,Juviles
@@ -2826,6 +2830,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 18,177,8,Sorvilán
 18,901,7,"Taha, La"
 18,178,4,Torre-Cardela
+18,916,7,Torrenueva Costa
 18,179,7,Torvizcón
 18,180,1,Trevélez
 18,181,8,Turón
@@ -3300,6 +3305,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 21,076,7,Villanueva de los Castillejos
 21,077,3,Villarrasa
 21,078,9,Zalamea la Real
+21,902,6,"Zarza-Perrunal, La"
 21,079,2,Zufre
 22,001,5,Abiego
 22,002,0,Abizanda
@@ -4771,7 +4777,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 31,151,6,Lerga
 31,152,1,Lerín
 31,153,7,Lesaka
-31,154,2,Lezáun
+31,154,2,Lezaun
 31,155,5,Liédena
 31,156,8,Lizoáin-Arriasgoiti
 31,157,4,Lodosa
@@ -4852,7 +4858,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 31,233,1,Tulebras
 31,234,6,Ucar
 31,123,4,Uharte Arakil
-31,235,9,Ujué
+31,235,9,Ujué/Uxue
 31,236,2,Ultzama
 31,237,8,Unciti
 31,238,4,Unzué/Untzue
@@ -5442,7 +5448,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 37,115,2,Dios le Guarde
 37,116,5,Doñinos de Ledesma
 37,117,1,Doñinos de Salamanca
-37,118,7,Ejeme
+37,118,7,Éjeme
 37,120,4,Encina de San Silvestre
 37,119,0,"Encina, La"
 37,121,1,Encinas de Abajo
@@ -5893,6 +5899,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 40,039,0,Campo de San Pedro
 40,040,4,Cantalejo
 40,041,1,Cantimpalos
+40,161,5,Carabias
 40,043,2,Carbonero el Mayor
 40,044,7,Carrascal del Río
 40,045,0,Casla
@@ -6000,7 +6007,6 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 40,158,1,Perosillo
 40,159,4,Pinarejos
 40,160,8,Pinarnegrillo
-40,161,5,Pradales
 40,162,0,Prádena
 40,163,6,Puebla de Pedraza
 40,164,1,Rapariegos
@@ -6137,6 +6143,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 41,067,1,Olivares
 41,068,7,Osuna
 41,069,0,"Palacios y Villafranca, Los"
+41,904,3,"Palmar de Troya, El"
 41,070,4,Palomares del Río
 41,071,1,Paradas
 41,072,6,Pedrera
@@ -6850,7 +6857,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 45,076,2,Hormigos
 45,077,8,Huecas
 45,078,4,Huerta de Valdecarábanos
-45,079,7,"Iglesuela, La"
+45,079,7,"Iglesuela del Tiétar, La"
 45,080,1,Illán de Vacas
 45,081,8,Illescas
 45,082,3,Lagartera
@@ -7006,7 +7013,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 46,023,5,Alfauir
 46,028,8,Algar de Palancia
 46,029,1,Algemesí
-46,030,5,Algimia de Alfara
+46,030,5,Algímia d'Alfara
 46,031,2,Alginet
 46,032,7,Almàssera
 46,033,3,Almiserà
@@ -7105,7 +7112,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 46,131,1,Gandia
 46,902,4,Gátova
 46,130,4,Gavarda
-46,132,6,Genovés
+46,132,6,"Genovés, el"
 46,133,2,Gestalgar
 46,134,7,Gilet
 46,135,0,Godella
@@ -7148,7 +7155,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 46,176,4,Montroi/Montroy
 46,172,7,Montserrat
 46,177,0,Museros
-46,178,6,Náquera
+46,178,6,Nàquera/Náquera
 46,179,9,Navarrés
 46,180,3,Novelé/Novetlè
 46,181,0,Oliva
@@ -7225,7 +7232,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 46,247,6,Tuéjar
 46,248,2,Turís
 46,249,5,Utiel
-46,250,8,Valencia
+46,250,8,València
 46,251,5,Vallada
 46,252,0,Vallanca
 46,253,6,Vallés
@@ -7953,7 +7960,7 @@ INE-PROV,INE-MUNI,INE-MUNI-DC,NOMBRE
 50,126,3,Illueca
 50,128,5,Isuerre
 50,129,8,Jaraba
-50,130,2,Jarque
+50,130,2,Jarque de Moncayo
 50,131,9,Jaulín
 50,132,4,"Joyosa, La"
 50,133,0,Lagata

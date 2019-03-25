@@ -35,8 +35,8 @@ module Gataloger::Plugins
 
         CSV.open(input_path("municipios.csv"), "wb", headers: [ :prov, :mun, :dc, :name]) do |csv|
           csv << ["INE-PROV", "INE-MUNI", "INE-MUNI-DC", "NOMBRE"]
-          excel.sheet(0).parse(prov: "CPRO", mun: "CMUN", dc: "DC", name: "NOMBRE").each do |row|
-            csv << row.values_at(:prov, :mun, :dc, :name)
+          excel.sheet(0).parse(header_search: [/CPRO/,/CMUN/], clean: true).each do |row|
+            csv << row.values_at("CPRO", "CMUN", "DC", "NOMBRE")
           end
         end
       end
