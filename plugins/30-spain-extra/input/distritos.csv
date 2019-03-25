@@ -39,7 +39,7 @@ INE-PROV,INE-MUNI,ID,NOMBRE
 41,091,11,Los Remedios
 28,079,01,Centro
 28,079,02,Arganzuela
-28,079,03,Retiro 
+28,079,03,Retiro
 28,079,04,Salamanca
 28,079,05,Chamartin
 28,079,06,Tetuan
@@ -48,13 +48,13 @@ INE-PROV,INE-MUNI,ID,NOMBRE
 28,079,09,Moncloa
 28,079,10,Latina
 28,079,11,Carabanchel
-28,079,12,Usera 
+28,079,12,Usera
 28,079,13,Puente de Vallecas
 28,079,14,Moratalaz
 28,079,15,Ciudad Lineal
 28,079,16,Hortaleza
 28,079,17,Villaverde
-28,079,18,Villa de Vallecas 
+28,079,18,Villa de Vallecas
 28,079,19,Vicalvaro
 28,079,20,San Blas
 28,079,21,Barajas
