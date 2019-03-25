@@ -1,7 +1,7 @@
 module Gataloger
   module Plugins
     def self.available
-      @available ||= Dir[File.expand_path("../../../plugins/*", __FILE__)].map {|folder| File.basename(folder).split("-",2)}.sort
+      @available ||= Dir[File.expand_path("../../../plugins/*", __FILE__)].map {|folder| parse_plugin_name(folder)} .compact.sort_by {|parts| parts.first.to_i}
     end
 
     def self.load args
@@ -39,6 +39,16 @@ module Gataloger
     end
 
     class FatalError < StandardError
+    end
+
+    private
+
+    def self.parse_plugin_name(folder)
+      order, name = File.basename(folder).split("-", 2)
+
+      return if order.to_i.zero?
+
+      [order, name]
     end
   end
 end
