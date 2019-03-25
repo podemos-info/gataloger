@@ -1,6 +1,6 @@
 # coding: utf-8
 
-REQUIRE_PATHS = ['lib', 'plugins']
+REQUIRE_PATHS = %w(lib plugins)
 
 REQUIRE_PATHS.each do |folder|
   path = File.expand_path("../#{folder}", __FILE__)
