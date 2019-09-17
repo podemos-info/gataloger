@@ -14,9 +14,16 @@ module Gataloger::Plugins
         district.translations["es"] = name
         regions << district
       end
+
+      CSV.foreach(input_path("extra.csv"), headers: true) do |row|
+        autonomous_community = regions.mapping("INE-CCAA", row["INE-CCAA"])
+        regions.add_mapping autonomous_community.uid, "PARTICIPA1-CCAA", row["PARTICIPA1-CCAA"]
+        regions.add_mapping autonomous_community.uid, "PARTICIPA1-SLUG", row["SLUG"]
+      end
     end
 
-private
+    private
+
     def input_path name
       File.expand_path("input/#{name}", File.dirname(__FILE__))
     end
